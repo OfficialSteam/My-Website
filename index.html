@@ -1,12 +1,243 @@
-<html>
-  <h1>Hey, I'm Steam!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- Website Icon -->
+    <link rel="icon" href="profile.png" type="image/x-icon" />
+    <title>OfficialSteam</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-image: url("https://i.pinimg.com/originals/4e/84/17/4e84178c3aac0743db5b17916a7b5bd6.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      .overlay {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+      .overlay.blur {
+        backdrop-filter: blur(5px);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .modal.show {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 600px;
+        width: 80%;
+        transform: scale(0.5);
+        animation: scaleUp 0.5s ease forwards;
+      }
+
+      @keyframes scaleUp {
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
   <body>
-    <h2>About Me</h2>
-    <p>
-      I work for a ER:LC Roleplay server called Texas State Roleplay:
-      https://discord.gg/txrp
-    </p>
-    <h2>What I am working on</h2>
-    <p>I am working on a new Discord bot called "Luminary".</p>
+    <div class="overlay"></div>
+    <div class="flex items-center justify-center min-h-screen z-5">
+      <div class="bg-white bg-opacity-50 p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center">Hey there, I'm Steam</h1>
+        <p class="text-lg text-center">Discord Bot Developer</p>
+        <div class="text-center">
+          <a
+            href="https://discord.com/users/704994041653362699"
+            class="hover:text-gray-600 transition"
+            ><i class="fab fa-discord"></i
+          ></a>
+          <a
+            href="https://github.com/OfficialSteam"
+            class="hover:text-gray-600 transition"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="mailto:juststeam9210@gmail.com"
+            class="hover:text-gray-600 transition"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+
+        <div class="pt-2 flex justify-between">
+          <a
+            href="#aboutme"
+            id="aboutme-link"
+            class="underline underline-offset-[10px] hover:text-gray-600 transition"
+            >About Me</a
+          >
+          <a
+            href="#projects"
+            id="projects-link"
+            class="underline underline-offset-[10px] hover:text-gray-600 transition"
+            >Projects</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="aboutme-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-aboutme">&times;</span>
+        <h2 class="text-2xl font-bold">About Me</h2>
+        <p>
+          I'm a 16 year old JavaScript Discord Bot Developer. I love to play
+          Emergency Response: Liberty County, Fortnite, Fallen Survival, and
+          Rainbow Six Seige.
+        </p>
+      </div>
+    </div>
+
+    <div id="projects-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-projects">&times;</span>
+        <h2 class="text-2xl font-bold">Projects</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="bg-white bg-opacity-90 p-4 rounded-lg shadow-md">
+            <h1 class="text-xl font-semibold mb-2">Texas State Roleplay</h1>
+            <p class="text-gray-700">
+              Immersive roleplaying experiences set in the beautiful state of
+              Texas, using the Roblox game Emergency Response: Liberty County!
+            </p>
+            <br />
+            <div class="flex flex-col">
+              <a
+                href="https://nohello.net"
+                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition pt-2"
+                >View Website</a
+              >
+              <a
+                href="https://discord.gg/txrp"
+                class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 transition mt-2"
+                >View Discord</a
+              >
+            </div>
+          </div>
+          <div class="bg-white bg-opacity-90 p-4 rounded-lg shadow-md">
+            <h1 class="text-xl font-semibold mb-2">Luminary</h1>
+            <p class="text-gray-700">
+              Luminary: Elevate your Discord server with streamlined moderation,
+              automoderation for safety, task automation, and detailed logging.
+            </p>
+            <div class="flex flex-col">
+              <a
+                href="https://sites.google.com/view/cloudsbot/home?authuser=0"
+                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition pt-2"
+                >View Website</a
+              >
+              <a
+                href="https://discord.gg/W3zhAgNM9n"
+                class="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 transition mt-2"
+                >View Discord</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function checkFor404(url) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("HEAD", url, false);
+        xhr.onload = function () {
+          if (xhr.status === 404) {
+            window.location.href = "404.html";
+          }
+        };
+        xhr.send();
+      }
+
+      checkFor404(window.location.href);
+      const aboutMeLink = document.getElementById("aboutme-link");
+      const projectsLink = document.getElementById("projects-link");
+      const aboutMeModal = document.getElementById("aboutme-modal");
+      const projectsModal = document.getElementById("projects-modal");
+      const closeAboutMe = document.getElementById("close-aboutme");
+      const closeProjects = document.getElementById("close-projects");
+
+      aboutMeLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        aboutMeModal.classList.add("show");
+      });
+
+      projectsLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        projectsModal.classList.add("show");
+      });
+
+      closeAboutMe.addEventListener("click", () => {
+        aboutMeModal.classList.remove("show");
+      });
+
+      closeProjects.addEventListener("click", () => {
+        projectsModal.classList.remove("show");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target == aboutMeModal) {
+          aboutMeModal.classList.remove("show");
+        }
+        if (e.target == projectsModal) {
+          projectsModal.classList.remove("show");
+        }
+      });
+    </script>
   </body>
 </html>
